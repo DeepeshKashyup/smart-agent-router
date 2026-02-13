@@ -1,0 +1,47 @@
+# Smart Agent Router Configuration
+
+models:
+  large:
+    name: "gemini-2.5-pro"
+    temperature: 0.2
+    max_tokens: 4096
+    top_p: 0.95
+    cost_per_1k_input: 0.00125    # $/1K input tokens
+    cost_per_1k_output: 0.005     # $/1K output tokens
+  small:
+    name: "gemini-2.0-flash"
+    temperature: 0.1
+    max_tokens: 2048
+    top_p: 0.9
+    cost_per_1k_input: 0.000075   # $/1K input tokens
+    cost_per_1k_output: 0.0003    # $/1K output tokens
+  router:
+    name: "gemini-2.0-flash"
+    temperature: 0.0
+    max_tokens: 128
+    top_p: 0.9
+
+routing:
+  # Complexity thresholds for routing decisions
+  complexity_threshold: 0.6       # Score above this -> large model
+  confidence_threshold: 0.8       # Below this -> escalate to large model
+  max_retries: 2
+
+retrieval:
+  chunk_size: 512
+  chunk_overlap: 50
+  top_k: 5
+  embedding_model: "text-embedding-004"
+
+guardrails:
+  max_input_length: 10000
+  max_output_length: 4096
+  blocked_topics:
+    - "harmful_content"
+    - "personal_data_extraction"
+    - "prompt_injection"
+
+cost_tracking:
+  enabled: true
+  log_every_n_requests: 1
+  alert_threshold_usd: 1.0       # Alert if single request exceeds this
