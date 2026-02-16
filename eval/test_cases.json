@@ -1,0 +1,72 @@
+[
+  {
+    "id": "simple_01",
+    "query": "What is Python?",
+    "expected_complexity": "SIMPLE",
+    "expected_model_tier": "small",
+    "category": "factual"
+  },
+  {
+    "id": "simple_02",
+    "query": "What does HTTP stand for?",
+    "expected_complexity": "SIMPLE",
+    "expected_model_tier": "small",
+    "category": "factual"
+  },
+  {
+    "id": "simple_03",
+    "query": "Convert 100 Celsius to Fahrenheit",
+    "expected_complexity": "SIMPLE",
+    "expected_model_tier": "small",
+    "category": "calculation"
+  },
+  {
+    "id": "moderate_01",
+    "query": "Summarize the key differences between REST and GraphQL APIs",
+    "expected_complexity": "MODERATE",
+    "expected_model_tier": "small",
+    "category": "summarization"
+  },
+  {
+    "id": "moderate_02",
+    "query": "Explain the CAP theorem and give an example of each trade-off",
+    "expected_complexity": "MODERATE",
+    "expected_model_tier": "small",
+    "category": "explanation"
+  },
+  {
+    "id": "moderate_03",
+    "query": "What are the pros and cons of using Kubernetes vs Docker Compose for a small team?",
+    "expected_complexity": "MODERATE",
+    "expected_model_tier": "small",
+    "category": "comparison"
+  },
+  {
+    "id": "complex_01",
+    "query": "Design a real-time fraud detection system that processes 10 million credit card transactions per day with sub-100ms latency. Include the data pipeline, ML model serving, and alerting architecture.",
+    "expected_complexity": "COMPLEX",
+    "expected_model_tier": "large",
+    "category": "system_design"
+  },
+  {
+    "id": "complex_02",
+    "query": "Write a Python implementation of a distributed rate limiter using Redis that supports sliding window, token bucket, and leaky bucket algorithms with configurable per-user limits.",
+    "expected_complexity": "COMPLEX",
+    "expected_model_tier": "large",
+    "category": "code_generation"
+  },
+  {
+    "id": "complex_03",
+    "query": "Analyze the trade-offs between event sourcing and traditional CRUD for a multi-tenant SaaS platform with audit requirements. Consider consistency, scalability, and operational complexity.",
+    "expected_complexity": "COMPLEX",
+    "expected_model_tier": "large",
+    "category": "architecture"
+  },
+  {
+    "id": "complex_04",
+    "query": "Compare transformer attention mechanisms (self-attention, cross-attention, grouped-query attention) and explain when each is optimal for different sequence lengths and hardware constraints.",
+    "expected_complexity": "COMPLEX",
+    "expected_model_tier": "large",
+    "category": "deep_analysis"
+  }
+]
